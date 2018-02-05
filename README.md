@@ -36,3 +36,8 @@ https://www.enotes.com/homework-help/what-relationship-between-altitude-temperat
 https://www.quora.com/How-does-air-pressure-relate-to-humidity
 http://www-das.uwyo.edu/~geerts/cwx/notes/chap16/geo_clim.html
 https://www.windows2universe.org/earth/Atmosphere/pressure_vs_altitude.html
+
+
+TODO
+
+Add extra test units, time from work didn't let me add more, but they are in important stuff. 
