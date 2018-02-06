@@ -2,6 +2,10 @@
 
 Simulation of weather
 
+To run test use command `sbt test`.
+ 
+To run the solution use command `sbt run`. 
+
 Assumptions to follow in the simulation:
 
  - Temperature and pressure have a direct relationship.
