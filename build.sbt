@@ -8,6 +8,8 @@ scalaVersion := "2.12.4"
 
 val playWsStandaloneVersion = "1.1.3"
 
+fork in run := true
+
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3"
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2"
 libraryDependencies += "com.koddi" %% "geocoder" % "1.1.0"
