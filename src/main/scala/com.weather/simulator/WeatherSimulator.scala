@@ -4,7 +4,11 @@ import com.weather.models._
 import org.joda.time.DateTime
 
 
-trait WeatherSimulator {
+trait WeatherSimulator
+  extends TemperatureTrait
+    with PressureTrait
+    with HumidityTrait
+    with ConditionsTrait {
 
   def simulateWeatherData(
                            location: Location,
@@ -14,10 +18,10 @@ trait WeatherSimulator {
                            maybeCurrentPressure: Option[Pressure] = None,
                            maybeCurrentHumidity: Option[Humidity] = None
                          ): WeatherData = {
-    val newTemperature = Temperature.obtainRandomTemperature(elevationPlusPosition, dateTime, maybeCurrentTemperature)
-    val newPressure = Pressure.obtainRandomPressure(elevationPlusPosition, newTemperature, maybeCurrentTemperature, maybeCurrentPressure)
-    val newHumidity = Humidity.obtainRandomHumidity(newPressure, maybeCurrentPressure, maybeCurrentHumidity)
-    val newCondition = Conditions.obtainCondition(newTemperature, newPressure, newHumidity)
+    val newTemperature = obtainRandomTemperature(elevationPlusPosition, dateTime, maybeCurrentTemperature)
+    val newPressure = obtainRandomPressure(elevationPlusPosition, newTemperature, maybeCurrentTemperature, maybeCurrentPressure)
+    val newHumidity = obtainRandomHumidity(newPressure, maybeCurrentPressure, maybeCurrentHumidity)
+    val newCondition = obtainCondition(newTemperature, newPressure, newHumidity)
 
     WeatherData(
       location = location,
